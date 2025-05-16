@@ -1,0 +1,53 @@
+/* Additional styles for Huy Hoang Bookstore website */
+
+/* Hero section styles */
+.hero-section {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Books section styles */
+.books-section {
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Online shopping section styles */
+.online-shop-logo {
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+/* Location section styles */
+.location-icon {
+    color: #b91c1c;
+}
+
+/* Footer styles */
+.footer-logo {
+    filter: brightness(0) invert(1);
+}
+
+/* Notification button styles */
+.tip-button {
+    transition: all 0.3s ease;
+}
+
+.tip-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .online-shop-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+} 

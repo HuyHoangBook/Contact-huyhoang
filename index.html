@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huy Hoàng Bookstore</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(121, 35, 35, 0.8), rgba(121, 35, 35, 0.8)), url('anh3.png');
+            background-size: cover;
+            background-position: top;
+            position: relative;
+        }
+        .books-section {
+            background: url('anh2.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 850px;
+            width: auto;
+        }
+        .online-section {
+            background-color: black;
+            min-height: 500px;
+            position: relative;
+        }
+        .online-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('anh1.jpg');
+            background-size: 120%;
+            background-position: center 30%;
+            opacity: 0.8;
+        }
+        .online-section .container {
+            position: relative;
+            z-index: 1;
+        }
+        .branches-section {
+            background-color: white;
+        }
+        .footer-section {
+            background-color: #b91c1c;
+        }
+        .platform-btn {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            padding: 15px;
+            margin: 0 5px;
+        }
+        .platform-btn:hover {
+            transform: scale(1.05);
+        }
+        .platform-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .platform-container {
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px;
+            }
+            .platform-btn {
+                width: 90px;
+                height: 90px;
+                padding: 10px;
+            }
+            .platform-img {
+                width: 50px;
+                height: 50px;
+            }
+            .online-logo {
+                margin-top: 20px;
+            }
+            .online-heading {
+                flex-direction: column;
+            }
+            .books-section {
+                min-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Section 1: Hero Section with anh3.png -->
+    <section class="hero-section py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <img src="logohuyhoang.png" alt="Huy Hoàng Bookstore Logo" class="h-16 inline-block">
+            </div>
+            <div class="text-center text-white">
+                <h1 class="text-5xl font-bold mb-8">Mở trang sách - Khởi hành trình</h1>
+                <a href="https://www.facebook.com/huyhoangbookstore" target="_blank" class="inline-block px-8 py-3 border-2 border-white rounded-full text-white hover:bg-white hover:text-red-800 transition duration-300">
+                    Fanpage Huy Hoang Bookstore
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Books Display with anh2.jpg -->
+    <section class="books-section py-16">
+        <!-- Content is included in the background image -->
+    </section>
+
+    <!-- Section 3: Online Shopping with anh1.jpg -->
+    <section class="online-section py-12">
+        <div class="container mx-auto text-center px-4">
+            <div class="flex items-center justify-center mb-10 online-heading">
+                <h2 class="text-3xl font-bold text-white">Mua hàng online tại</h2>
+                <a href="https://www.huyhoangbook.vn/" target="_blank">
+                    <img src="logo2h.png" alt="2H Books Logo" class="ml-3 online-logo" style="height: 135px;">
+                </a>
+            </div>
+            
+            <div class="flex justify-center items-center platform-container">
+                <a href="https://shopee.vn/2hbooks" target="_blank" class="bg-white rounded-md platform-btn">
+                    <img src="shopee.png" alt="Shopee" class="platform-img">
+                </a>
+                <a href="https://tiki.vn/cua-hang/2hbooks?source_screen=product_detail&source_engine=organic" target="_blank" class="bg-white rounded-md platform-btn">
+                    <img src="tiki.png" alt="Tiki" class="platform-img">
+                </a>
+                <a href="https://www.tiktok.com/@2hbooks_" target="_blank" class="bg-white rounded-md platform-btn">
+                    <img src="tiktok.png" alt="TikTok" class="platform-img">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Branch Locations -->
+    <section class="branches-section py-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-red-700 mb-6">ĐỊA CHỈ CÁC CHI NHÁNH OFFLINE</h2>
+            
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold text-red-700 mb-3">CƠ SỞ TP. HÀ NỘI</h3>
+                <div class="flex items-start mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <p class="text-lg">110D Ngọc Hà, Ba Đình, HN</p>
+                </div>
+                <div class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <p class="text-lg">Phố 19 Tháng 12, Trần Hưng Đạo, Hoàn Kiếm, HN</p>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-2xl font-bold text-red-700 mb-3">CƠ SỞ TP. HỒ CHÍ MINH</h3>
+                <div class="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <p class="text-lg">357A Lê Văn Sỹ, Phường 1, Quận Tân Bình, TP.HCM</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Contact Information -->
+    <footer class="footer-section py-6 text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center">
+                <a href="https://www.huyhoangbook.vn/" target="_blank">
+                    <img src="logohuyhoang.png" alt="Huy Hoàng Bookstore Logo" class="h-14 mb-4 invert">
+                </a>
+                <h2 class="text-2xl font-bold mb-3">HUY HOÀNG BOOKSTORE</h2>
+                <p class="mb-2 text-center"><span class="font-bold">HOTLINE:</span> 0243.736.5859 - 0243.736.6075 - 0283.991.3636</p>
+                <p class="text-center"><span class="font-bold">WEBSITE:</span> <a href="https://www.huyhoangbook.vn/" target="_blank" class="underline">https://www.huyhoangbook.vn/</a></p>
+                <div class="mt-4 flex space-x-4">
+                    <a href="https://www.facebook.com/huyhoangbookstore" target="_blank" class="text-white hover:text-blue-300">Facebook</a>
+                    <a href="https://www.tiktok.com/@2hbooks_" target="_blank" class="text-white hover:text-blue-300">TikTok</a>
+                    <a href="https://shopee.vn/2hbooks" target="_blank" class="text-white hover:text-blue-300">Shopee</a>
+                    <a href="https://tiki.vn/cua-hang/2hbooks?source_screen=product_detail&source_engine=organic" target="_blank" class="text-white hover:text-blue-300">Tiki</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
