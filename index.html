@@ -22,10 +22,13 @@
         }
         .books-section {
             background: url('anh2.png');
-            background-size: cover;
+            background-size: contain;
             background-position: center;
-            min-height: 850px;
-            width: auto;
+            background-repeat: no-repeat;
+            height: 0;
+            padding-bottom: 45%;
+            width: 100%;
+            position: relative;
         }
         .online-section {
             background-color: black;
@@ -40,8 +43,8 @@
             right: 0;
             bottom: 0;
             background: url('anh1.jpg');
-            background-size: 120%;
-            background-position: center 30%;
+            background-size:100%;
+            background-position: center 20%;
             opacity: 0.8;
         }
         .online-section .container {
@@ -90,13 +93,27 @@
                 height: 50px;
             }
             .online-logo {
-                margin-top: 20px;
+                margin-top: 5px !important;
+                margin-left: 0 !important;
+                display: block;
+                position: relative;
+                top: -55px;
             }
             .online-heading {
                 flex-direction: column;
+                align-items: center;
             }
             .books-section {
-                min-height: 400px;
+                padding-top: 55%;
+                background-size: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 100%;
+                min-height: auto;
+            }
+            .online-section::before {
+                background-size: cover;
+                background-position: center;
             }
         }
     </style>
@@ -109,7 +126,7 @@
                 <img src="logohuyhoang.png" alt="Huy Hoàng Bookstore Logo" class="h-16 inline-block">
             </div>
             <div class="text-center text-white">
-                <h1 class="text-5xl font-bold mb-8">Mở trang sách - Khởi hành trình</h1>
+                <h1 class="text-5xl font-bold mb-8" style="font-family: 'Times New Roman', Times, serif; font-style: italic;">Mở trang sách - Khởi hành trình</h1>
                 <a href="https://www.facebook.com/huyhoangbookstore" target="_blank" class="inline-block px-8 py-3 border-2 border-white rounded-full text-white hover:bg-white hover:text-red-800 transition duration-300">
                     Fanpage Huy Hoang Bookstore
                 </a>
@@ -132,7 +149,7 @@
                 </a>
             </div>
             
-            <div class="flex justify-center items-center platform-container">
+            <div class="flex justify-center items-center platform-container" style="margin-top: 150px;">
                 <a href="https://shopee.vn/2hbooks" target="_blank" class="bg-white rounded-md platform-btn">
                     <img src="shopee.png" alt="Shopee" class="platform-img">
                 </a>
