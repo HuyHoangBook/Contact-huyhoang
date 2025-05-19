@@ -143,13 +143,14 @@
     }
     
     .hero-title {
-        font-size: 1.7rem !important;
-        white-space: normal !important;
-        width: 100% !important;
+        font-size: 1.4rem !important;
+        white-space: nowrap !important;
+        width: auto !important;
         max-width: 100% !important;
         overflow: visible !important;
         display: inline-block !important;
-        padding: 0 10px !important;
+        padding: 0 5px !important;
+        text-overflow: ellipsis !important;
     }
     
     /* Mobile branch section styles */
