@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Huy Hoàng Bookstore</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -13,6 +13,8 @@
             scroll-behavior: smooth;
             margin: 0;
             padding: 0;
+            width: 100%;
+            overflow-x: hidden;
         }
         .hero-section {
             background: linear-gradient(rgba(121, 35, 35, 0.8), rgba(121, 35, 35, 0.8)), url('anh3.png');
@@ -152,13 +154,13 @@
 </head>
 <body>
     <!-- Section 1: Hero Section with anh3.png -->
-    <section class="hero-section py-16">
-        <div class="container mx-auto px-4">
-            <div class="logo-container mb-8">
+    <section class="hero-section py-16 w-full">
+        <div class="container mx-auto">
+            <div class="logo-container">
                 <img src="logohuyhoang.png" alt="Huy Hoàng Bookstore Logo" class="h-20 inline-block">
             </div>
             <div class="text-center text-white">
-                <h1 class="text-5xl font-bold mb-8 hero-title" style="font-family: 'Times New Roman', Times, serif; font-style: italic;">Mở trang sách - Khởi hành trình</h1>
+                <h1 class="text-4xl md:text-5xl font-bold mb-8 hero-title" style="font-family: 'Times New Roman', Times, serif; font-style: italic;">Mở trang sách - Khởi hành trình</h1>
                 <a href="https://www.facebook.com/huyhoangbookstore" target="_blank" class="inline-block px-8 py-3 border-2 border-white rounded-full text-white hover:bg-white hover:text-red-800 transition duration-300">
                     Fanpage Huy Hoang Bookstore
                 </a>
@@ -167,13 +169,13 @@
     </section>
 
     <!-- Section 2: Books Display with anh2.jpg -->
-    <section class="books-section py-16">
+    <section class="books-section py-16 w-full">
         <!-- Content is included in the background image -->
     </section>
 
     <!-- Section 3: Online Shopping with anh1.jpg -->
-    <section class="online-section py-8">
-        <div class="container mx-auto text-center px-4">
+    <section class="online-section py-8 w-full">
+        <div class="container mx-auto text-center">
             <div class="flex flex-row items-center justify-center mb-10 online-heading" style="padding-top: 5px;">
                 <h2 class="text-xl md:text-3xl font-bold text-white whitespace-nowrap">Mua hàng online tại</h2>
                 <a href="https://www.huyhoangbook.vn/" target="_blank">
@@ -196,8 +198,8 @@
     </section>
 
     <!-- Section 4: Branch Locations -->
-    <section class="branches-section py-10">
-        <div class="container mx-auto px-8 md:px-16">
+    <section class="branches-section py-10 w-full">
+        <div class="container mx-auto">
             <h2 class="text-2xl md:text-2xl font-bold text-red-700 mb-6 branches-title">ĐỊA CHỈ CÁC CHI NHÁNH OFFLINE</h2>
             
             <div class="mb-8">
@@ -232,8 +234,8 @@
     </section>
 
     <!-- Section 5: Contact Information -->
-    <footer class="footer-section py-6 text-white">
-        <div class="container mx-auto px-4">
+    <footer class="footer-section py-6 text-white w-full">
+        <div class="container mx-auto">
             <div class="flex flex-col items-center md:items-center">
                 <a href="https://www.huyhoangbook.vn/" target="_blank">
                     <img src="logohuyhoang.png" alt="Huy Hoàng Bookstore Logo" class="h-16 mb-6 brightness-0 invert">
