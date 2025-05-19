@@ -24,16 +24,17 @@
             background: url('anh2.png');
             background-size: contain;
             background-position: center;
-            background-repeat: no-repeat;
-            height: 0;
+            background-repeat: repeat-x;
+            height: auto;
             padding-bottom: 45%;
             width: 100%;
             position: relative;
         }
         .online-section {
             background-color: black;
-            min-height: 500px;
+            min-height: 400px;
             position: relative;
+            overflow: hidden;
         }
         .online-section::before {
             content: '';
@@ -41,10 +42,10 @@
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
+            bottom: -33.33%; /* Crops bottom 1/3 */
             background: url('anh1.jpg');
-            background-size:100%;
-            background-position: center 20%;
+            background-size: 120%;
+            background-position: center 15%;
             opacity: 0.8;
         }
         .online-section .container {
@@ -76,44 +77,75 @@
             object-fit: contain;
         }
         
+        /* Hero title styles moved to styles.css */
+        
         /* Mobile responsiveness */
         @media (max-width: 768px) {
             .platform-container {
                 flex-direction: row;
                 justify-content: center;
-                gap: 10px;
+                gap: 15px;
+                margin-top: 0 !important;
+                position: absolute;
+                bottom: 25%;
+                left: 0;
+                right: 0;
+                z-index: 5;
             }
             .platform-btn {
-                width: 90px;
-                height: 90px;
-                padding: 10px;
+                width: 70px;
+                height: 70px;
+                padding: 8px;
             }
             .platform-img {
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
             }
             .online-logo {
-                margin-top: 5px !important;
-                margin-left: 0 !important;
-                display: block;
-                position: relative;
-                top: -55px;
+                height: 100px !important;
+                margin-left: 10px !important;
             }
             .online-heading {
-                flex-direction: column;
+                flex-direction: row !important;
                 align-items: center;
+                justify-content: center;
+                margin-bottom: 5px !important;
+                padding-top: 5px !important;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
             }
+            .online-section {
+                padding: 0;
+                position: relative;
+                min-height: 80vw;
+            }
+            .online-section .container {
+                position: static;
+                height: 100%;
+            }
+            /* Hero title mobile styles moved to styles.css */
             .books-section {
-                padding-top: 55%;
-                background-size: 100%;
+                padding-bottom: 70%;
+                background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center;
                 width: 100%;
-                min-height: auto;
             }
             .online-section::before {
-                background-size: cover;
-                background-position: center;
+                background-size: 140%;
+                background-position: center 15%;
+                bottom: -33.33%; /* Crops bottom 1/3 */
+                opacity: 0.8;
+            }
+            .footer-section .container div {
+                flex-direction: column;
+            }
+            .footer-section .space-x-4 {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
@@ -122,11 +154,11 @@
     <!-- Section 1: Hero Section with anh3.png -->
     <section class="hero-section py-16">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-8">
-                <img src="logohuyhoang.png" alt="Huy Hoàng Bookstore Logo" class="h-16 inline-block">
+            <div class="logo-container mb-8">
+                <img src="logohuyhoang.png" alt="Huy Hoàng Bookstore Logo" class="h-20 inline-block">
             </div>
             <div class="text-center text-white">
-                <h1 class="text-5xl font-bold mb-8" style="font-family: 'Times New Roman', Times, serif; font-style: italic;">Mở trang sách - Khởi hành trình</h1>
+                <h1 class="text-5xl font-bold mb-8 hero-title" style="font-family: 'Times New Roman', Times, serif; font-style: italic;">Mở trang sách - Khởi hành trình</h1>
                 <a href="https://www.facebook.com/huyhoangbookstore" target="_blank" class="inline-block px-8 py-3 border-2 border-white rounded-full text-white hover:bg-white hover:text-red-800 transition duration-300">
                     Fanpage Huy Hoang Bookstore
                 </a>
@@ -140,16 +172,16 @@
     </section>
 
     <!-- Section 3: Online Shopping with anh1.jpg -->
-    <section class="online-section py-12">
+    <section class="online-section py-8">
         <div class="container mx-auto text-center px-4">
-            <div class="flex items-center justify-center mb-10 online-heading">
-                <h2 class="text-3xl font-bold text-white">Mua hàng online tại</h2>
+            <div class="flex flex-row items-center justify-center mb-10 online-heading" style="padding-top: 5px;">
+                <h2 class="text-xl md:text-3xl font-bold text-white whitespace-nowrap">Mua hàng online tại</h2>
                 <a href="https://www.huyhoangbook.vn/" target="_blank">
-                    <img src="logo2h.png" alt="2H Books Logo" class="ml-3 online-logo" style="height: 135px;">
+                    <img src="logo2h.png" alt="2H Books Logo" class="online-logo ml-3" style="height: 150px;">
                 </a>
             </div>
             
-            <div class="flex justify-center items-center platform-container" style="margin-top: 150px;">
+            <div class="flex justify-center items-center platform-container">
                 <a href="https://shopee.vn/2hbooks" target="_blank" class="bg-white rounded-md platform-btn">
                     <img src="shopee.png" alt="Shopee" class="platform-img">
                 </a>
@@ -165,35 +197,35 @@
 
     <!-- Section 4: Branch Locations -->
     <section class="branches-section py-10">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-red-700 mb-6">ĐỊA CHỈ CÁC CHI NHÁNH OFFLINE</h2>
+        <div class="container mx-auto px-8 md:px-16">
+            <h2 class="text-2xl md:text-2xl font-bold text-red-700 mb-6 branches-title">ĐỊA CHỈ CÁC CHI NHÁNH OFFLINE</h2>
             
             <div class="mb-8">
-                <h3 class="text-2xl font-bold text-red-700 mb-3">CƠ SỞ TP. HÀ NỘI</h3>
+                <h3 class="text-xl md:text-xl font-bold text-red-700 mb-3 location-title">CƠ SỞ TP. HÀ NỘI</h3>
                 <div class="flex items-start mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <p class="text-lg">110D Ngọc Hà, Ba Đình, HN</p>
+                    <p class="text-base md:text-base location-address">110D Ngọc Hà, Ba Đình, HN</p>
                 </div>
                 <div class="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <p class="text-lg">Phố 19 Tháng 12, Trần Hưng Đạo, Hoàn Kiếm, HN</p>
+                    <p class="text-base md:text-base location-address">Phố 19 Tháng 12, Trần Hưng Đạo, Hoàn Kiếm, HN</p>
                 </div>
             </div>
             
             <div>
-                <h3 class="text-2xl font-bold text-red-700 mb-3">CƠ SỞ TP. HỒ CHÍ MINH</h3>
+                <h3 class="text-xl md:text-xl font-bold text-red-700 mb-3 location-title">CƠ SỞ TP. HỒ CHÍ MINH</h3>
                 <div class="flex items-start">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-red-700 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <p class="text-lg">357A Lê Văn Sỹ, Phường 1, Quận Tân Bình, TP.HCM</p>
+                    <p class="text-base md:text-base location-address">357A Lê Văn Sỹ, Phường 1, Quận Tân Bình, TP.HCM</p>
                 </div>
             </div>
         </div>
@@ -202,19 +234,13 @@
     <!-- Section 5: Contact Information -->
     <footer class="footer-section py-6 text-white">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-center md:items-center">
                 <a href="https://www.huyhoangbook.vn/" target="_blank">
-                    <img src="logohuyhoang.png" alt="Huy Hoàng Bookstore Logo" class="h-14 mb-4 invert">
+                    <img src="logohuyhoang.png" alt="Huy Hoàng Bookstore Logo" class="h-16 mb-6 brightness-0 invert">
                 </a>
-                <h2 class="text-2xl font-bold mb-3">HUY HOÀNG BOOKSTORE</h2>
-                <p class="mb-2 text-center"><span class="font-bold">HOTLINE:</span> 0243.736.5859 - 0243.736.6075 - 0283.991.3636</p>
-                <p class="text-center"><span class="font-bold">WEBSITE:</span> <a href="https://www.huyhoangbook.vn/" target="_blank" class="underline">https://www.huyhoangbook.vn/</a></p>
-                <div class="mt-4 flex space-x-4">
-                    <a href="https://www.facebook.com/huyhoangbookstore" target="_blank" class="text-white hover:text-blue-300">Facebook</a>
-                    <a href="https://www.tiktok.com/@2hbooks_" target="_blank" class="text-white hover:text-blue-300">TikTok</a>
-                    <a href="https://shopee.vn/2hbooks" target="_blank" class="text-white hover:text-blue-300">Shopee</a>
-                    <a href="https://tiki.vn/cua-hang/2hbooks?source_screen=product_detail&source_engine=organic" target="_blank" class="text-white hover:text-blue-300">Tiki</a>
-                </div>
+                <h2 class="text-2xl font-bold mb-5 text-center">HUY HOÀNG BOOKSTORE</h2>
+                <p class="mb-3 footer-info"><span class="font-bold">HOTLINE:</span> 0243.736.5859 - 0243.736.6075 - 0283.991.3636</p>
+                <p class="footer-info"><span class="font-bold">WEBSITE:</span> <a href="https://www.huyhoangbook.vn/" target="_blank" class="underline">https://www.huyhoangbook.vn/</a></p>
             </div>
         </div>
     </footer>
