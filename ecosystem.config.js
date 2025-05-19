@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'huyhoang-bookstore',
       script: 'serve',
-      args: '-s . -l 9005',
+      args: ['-s', '.', '-p', '9005'],
       env: {
         NODE_ENV: 'production',
       },
